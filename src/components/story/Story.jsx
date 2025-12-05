@@ -9,8 +9,8 @@ const fadeUp = {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 1.4, ease: [0.16, 1, 0.3, 1] }
-  }
+    transition: { duration: 1.4, ease: [0.16, 1, 0.3, 1] },
+  },
 };
 
 const fadeUpDelayed = {
@@ -19,18 +19,21 @@ const fadeUpDelayed = {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 1.6, ease: [0.16, 1, 0.3, 1], delay: 0.3 }
-  }
+    transition: { duration: 1.6, ease: [0.16, 1, 0.3, 1], delay: 0.3 },
+  },
 };
 
 const driftFloat = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0, transition: { duration: 1.6, ease: "easeOut" } },
-  drift: { y: [0, -6, 0], transition: { duration: 6, repeat: Infinity, ease: "easeInOut" } }
+  drift: {
+    y: [0, -6, 0],
+    transition: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+  },
 };
 
 const staggerParent = {
-  show: { transition: { staggerChildren: 0.25 } }
+  show: { transition: { staggerChildren: 0.25 } },
 };
 
 const Story = () => {
@@ -44,16 +47,16 @@ const Story = () => {
       {/* Top Text Section */}
       <motion.div className="story_main" variants={staggerParent}>
         <motion.h2 className="story_date" variants={fadeUp}>
-       4.25.2026
-
+          4.25.2026
         </motion.h2>
         <motion.p className="story_location" variants={fadeUp}>
           Edimburg, Scotland
         </motion.p>
-
-        <motion.button className="rsvp_here" variants={fadeUp}>
-          rsvp
-        </motion.button>
+        <a href="rsvp" style={{position:"relative",zIndex:"10"}}>
+          <motion.button className="rsvp_here dul" variants={fadeUp}>
+            rsvp
+          </motion.button>
+        </a>
       </motion.div>
 
       {/* Images Section */}
@@ -77,7 +80,7 @@ const Story = () => {
               animate="drift"
             />
             <motion.img
-            src="https://res.cloudinary.com/dhisaijz3/image/upload/v1764943132/CF082346-6F40-4F30-9FEC-76AD2BFBB207_11zon_h8t6zn.webp"
+              src="https://res.cloudinary.com/dhisaijz3/image/upload/v1764943132/CF082346-6F40-4F30-9FEC-76AD2BFBB207_11zon_h8t6zn.webp"
               alt=""
               className="story_img c"
               variants={fadeUp}
