@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link, useParams } from "react-router-dom";
 import "./s.css";
 import one from "../../assets/header1.webp";
 
@@ -37,6 +38,12 @@ const staggerParent = {
 };
 
 const Story = () => {
+  const params = useParams();
+  const guestName = params.guestName || null;
+
+  // Set the RSVP link based on guestName
+  const rsvpLink = guestName ? `/${guestName}/rsvp` : "/rsvp-password";
+
   return (
     <motion.div
       className="story cc"
@@ -52,9 +59,11 @@ const Story = () => {
         <motion.p className="story_location" variants={fadeUp}>
           Eola View
         </motion.p>
-        <a href="rsvp" style={{ position: "relative", zIndex: "10" }}>
+
+        {/* Conditional RSVP Link */}
+        <a href={rsvpLink} style={{ position: "relative", zIndex: "10" }}>
           <motion.button className="rsvp_here dul" variants={fadeUp}>
-            rsvp
+            RSVP
           </motion.button>
         </a>
       </motion.div>
