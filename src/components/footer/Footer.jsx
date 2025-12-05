@@ -59,7 +59,7 @@ const Footer = () => {
           </motion.h2>
 
           <motion.p className="respond_p" variants={fadeUpDelayed(0.2)}>
-            We kindly ask your response by 2 of January
+            We kindly ask your response by March 15, 2026
           </motion.p>
           <div className="note">
             <a href="rsvp">

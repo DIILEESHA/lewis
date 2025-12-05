@@ -44,7 +44,8 @@ const Story = () => {
       {/* Top Text Section */}
       <motion.div className="story_main" variants={staggerParent}>
         <motion.h2 className="story_date" variants={fadeUp}>
-          11.02.2025
+       4.25.2026
+
         </motion.h2>
         <motion.p className="story_location" variants={fadeUp}>
           Edimburg, Scotland
