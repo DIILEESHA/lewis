@@ -6,7 +6,9 @@
   position: relative;
   z-index: 10;
 }
-
+.a{
+  transform: rotate(4deg);
+}
 /* HEART OVERLAY */
 .cc {
   position: relative;
