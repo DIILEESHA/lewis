@@ -94,7 +94,7 @@ const PasswordProtected = ({ children, guestName }) => {
 
     if (passwordInput === guestPassword || passwordInput === sitePassword) {
       setIsAuthorized(true);
-      localStorage.setItem(storageKey, "true"); // store authorization
+      localStorage.setItem(storageKey, "true"); // store authorizdsssww
     } else {
       setErrorMsg("Incorrect password. Please try again.");
     }
