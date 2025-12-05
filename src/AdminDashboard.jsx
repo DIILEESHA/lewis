@@ -237,24 +237,13 @@ const AdminDashboard = () => {
   }
 
   const menuItems = [
+    { key: "addGuest", label: "Add Guest", icon: <PlusOutlined /> },
     {
-      key: "1",
-      label: "Add Guest",
-      icon: <PlusOutlined />,
-      onClick: () => setActivePage("dashboard"),
-    },
-    {
-      key: "2",
+      key: "changeSitePwd",
       label: "Change Public Site Password",
       icon: <UserAddOutlined />,
-      onClick: () => setSitePwdModalVisible(true),
     },
-    {
-      key: "3",
-      label: "RSVP Entries",
-      icon: <UserAddOutlined />,
-      onClick: () => setActivePage("rsvp"),
-    },
+    { key: "rsvp", label: "RSVP Entries", icon: <UserAddOutlined /> },
   ];
 
   return (
@@ -281,12 +270,18 @@ const AdminDashboard = () => {
         >
           {collapsed ? "AD" : "Admin Dashboard"}
         </div>
-        <Menu
-          theme="light"
-          mode="inline"
-          defaultSelectedKeys={["1"]}
-          items={menuItems}
-        />
+     <Menu
+  theme="light"
+  mode="inline"
+  selectedKeys={[activePage]}
+  onClick={({ key }) => {
+    if (key === "addGuest") setIsModalOpen(true);
+    if (key === "changeSitePwd") setSitePwdModalVisible(true);
+    if (key === "rsvp") setActivePage("rsvp");
+  }}
+  items={menuItems}
+/>
+
       </Sider>
 
       <Layout
