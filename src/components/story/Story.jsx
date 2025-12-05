@@ -42,7 +42,7 @@ const Story = () => {
   const guestName = params.guestName || null;
 
   // Set the RSVP link based on guestName
-  const rsvpLink = guestName ? `/${guestName}/rsvp` : "/rsvp-password";
+  const rsvpLink = guestName ? `/${guestName}/rsvp` : "/rsvp";
 
   return (
     <motion.div

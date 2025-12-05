@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import "./f.css";
-import Footers from "./Footers";
-import { div } from "framer-motion/client";
+import { useParams, Link } from "react-router-dom";
 
 // Animation variants
 const fadeUp = {
@@ -39,12 +38,16 @@ const driftButton = {
 
 const staggerParent = {
   hidden: {},
-  show: {
-    transition: { staggerChildren: 0.25 },
-  },
+  show: { transition: { staggerChildren: 0.25 } },
 };
 
 const Footer = () => {
+  const params = useParams();
+  const guestName = params.guestName || null;
+
+  // Conditional RSVP link
+  const rsvpLink = guestName ? `/${guestName}/rsvp` : "/rsvp-password";
+
   return (
     <div>
       <motion.div
@@ -61,17 +64,17 @@ const Footer = () => {
           <motion.p className="respond_p" variants={fadeUpDelayed(0.2)}>
             We kindly ask your response by March 15, 2026
           </motion.p>
-          <div className="note">
-            <a href="rsvp">
 
-            <motion.button
-              className="rsvp_here dopa"
-              variants={driftButton}
-              animate="drift"
-            >
-              rsvp
-            </motion.button>
-              </a>
+          <div className="note">
+            <Link to={rsvpLink}>
+              <motion.button
+                className="rsvp_here dopa"
+                variants={driftButton}
+                animate="drift"
+              >
+                RSVP
+              </motion.button>
+            </Link>
           </div>
 
           <motion.h2

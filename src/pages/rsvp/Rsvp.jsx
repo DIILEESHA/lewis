@@ -76,7 +76,7 @@ const Rsvp = () => {
       <div className="dress_content">
         <h2 className="drss_topic">RSVP</h2>
 
-        <p className="dress_para">
+        <p className="dress_para nom">
           Please respond by March 15, 2026. Adults-only celebration. Only
           invited guests may attend; names must match the invitation.
         </p>
