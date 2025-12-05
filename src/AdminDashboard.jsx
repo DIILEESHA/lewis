@@ -64,7 +64,7 @@ const AdminDashboard = () => {
 
   // Admin Login
   const handleLogin = () => {
-    if (password === "123") {
+    if (password === "jl2026!") {
       setIsLoggedIn(true);
       fetchGuests();
       fetchSitePassword();
