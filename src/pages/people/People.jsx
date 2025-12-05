@@ -69,6 +69,11 @@ const Dress = () => {
       title: "Groomsman",
       img: "https://res.cloudinary.com/dhisaijz3/image/upload/v1764839677/2C1F0D38-F1F3-4E03-BDA6-3FAB1594B8D0_ip7sjh.jpg",
     },
+      {
+      name: "George",
+      title: "Groomsman",
+      img:"https://res.cloudinary.com/dhisaijz3/image/upload/v1764956755/0_ngxw5b.jpg"
+    },
   ];
 
   return (
