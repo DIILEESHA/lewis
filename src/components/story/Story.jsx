@@ -50,9 +50,9 @@ const Story = () => {
           4.25.2026
         </motion.h2>
         <motion.p className="story_location" variants={fadeUp}>
-          Edimburg, Scotland
+          Eola View
         </motion.p>
-        <a href="rsvp" style={{position:"relative",zIndex:"10"}}>
+        <a href="rsvp" style={{ position: "relative", zIndex: "10" }}>
           <motion.button className="rsvp_here dul" variants={fadeUp}>
             rsvp
           </motion.button>
