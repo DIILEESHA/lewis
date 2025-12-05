@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Routes, Route } from "react-router-dom";
+import { useParams, Routes, Route, Navigate } from "react-router-dom";
 import { db } from "./firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
@@ -16,83 +16,94 @@ import Gallery from "./pages/dress/Gallery";
 import Rsvp from "./pages/rsvp/Rsvp";
 
 const GuestPageWrapper = () => {
-  const { guestName } = useParams(); // this is the unique guest link
-  const [passwordInput, setPasswordInput] = useState("");
+  const { guestName } = useParams();
+
+  const [loading, setLoading] = useState(true);
   const [guestData, setGuestData] = useState(null);
+  const [passwordInput, setPasswordInput] = useState("");
   const [isAuthorized, setIsAuthorized] = useState(false);
 
   useEffect(() => {
     const fetchGuest = async () => {
-      // Fetch guest by 'link' field, which should match AdminDashboard
       const q = query(
         collection(db, "guests"),
         where("link", "==", `/${guestName}`)
       );
-      const querySnapshot = await getDocs(q);
-      if (!querySnapshot.empty) {
-        setGuestData(querySnapshot.docs[0].data());
+
+      const snapshot = await getDocs(q);
+
+      if (!snapshot.empty) {
+        const data = snapshot.docs[0].data();
+        setGuestData(data);
       }
+
+      const savedAuth = localStorage.getItem(`guest_${guestName}`);
+      if (savedAuth === "true") setIsAuthorized(true);
+
+      setLoading(false);
     };
 
     fetchGuest();
-
-    // Check if guest is already authorized
-    const storedAuth = localStorage.getItem(`guest_${guestName}`);
-    if (storedAuth === "true") setIsAuthorized(true);
   }, [guestName]);
 
-  const handleCheckPassword = (e) => {
+  const handlePasswordSubmit = (e) => {
     e.preventDefault();
-    if (guestData && guestData.password === passwordInput) {
-      setIsAuthorized(true);
+    if (guestData?.password === passwordInput) {
       localStorage.setItem(`guest_${guestName}`, "true");
+      setIsAuthorized(true);
     } else {
       alert("Incorrect password");
     }
   };
 
-  if (!guestData) return <></>;
+  if (loading) return <></>;
+  if (!guestData) return <Navigate to="/" />;
 
   if (!isAuthorized) {
     return (
       <div className="w">
         <div className="wrapper">
-          <form className="for" onSubmit={handleCheckPassword}>
-            <h2>Welcome, {guestName}</h2>
+          <form className="for" onSubmit={handlePasswordSubmit}>
+            <div className="tooner">
+              <img
+                className="toon"
+                src="https://res.cloudinary.com/dhisaijz3/image/upload/v1764957081/logo_vqbyrw.png"
+                alt=""
+              />
+            </div>
+            <h2 style={{ fontSize: "14px" }}>Welcome, {guestName}</h2>
+
             <input
               type="password"
               placeholder="Enter password"
               value={passwordInput}
               onChange={(e) => setPasswordInput(e.target.value)}
-              style={{ padding: 10, fontSize: 16, marginRight: 10 }}
             />
-            <button
-              type="submit"
-              style={{ padding: "10px 20px", fontSize: 16, cursor: "pointer" }}
-            >
-              Submit
-            </button>
+
+            <button type="submit">Submit</button>
           </form>
         </div>
       </div>
     );
   }
 
-  // Authorized guest view
+  // Authorized view
   return (
     <>
       <Nav isGuest={true} />
+
       <Routes>
         <Route index element={<All />} />
         <Route path="party" element={<People />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Route path="gallery" element={<Gallery />} />
         <Route path="dress" element={<Dress />} />
         <Route path="guide" element={<Guide />} />
         <Route path="travel-stay" element={<Travel />} />
         <Route path="registry" element={<Registry />} />
+        <Route path="rsvp" element={<Rsvp />} />
         <Route path="*" element={<All />} />
-        <Route path="/rsvp" element={<Rsvp />} />
       </Routes>
+
       <Footers />
     </>
   );

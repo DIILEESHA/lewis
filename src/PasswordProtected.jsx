@@ -30,10 +30,7 @@ const PasswordProtected = ({ children, guestName }) => {
       try {
         if (!guestName) return;
 
-        const cleanedName = guestName
-          .trim()
-          .toLowerCase()
-          .replace(/\s+/g, "");
+        const cleanedName = guestName.trim().toLowerCase().replace(/\s+/g, "");
 
         const q = query(
           collection(db, "guests"),
@@ -107,7 +104,14 @@ const PasswordProtected = ({ children, guestName }) => {
     <div className="w">
       <div className="wrapper">
         <form className="for" onSubmit={handleCheckPassword}>
-          <h2>Welcome{guestName ? `, ${guestName}` : ""}</h2>
+          <div className="tooner">
+            <img
+              className="toon"
+              src="https://res.cloudinary.com/dhisaijz3/image/upload/v1764957081/logo_vqbyrw.png"
+              alt=""
+            />
+          </div>
+          {/* <h2>Welcome{guestName ? `, ${guestName}` : ""}</h2> */}
 
           <input
             type="password"
