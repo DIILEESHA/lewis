@@ -1,0 +1,173 @@
+/* DETAIL GRID */
+.detail_grid {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  z-index: 10;
+}
+
+/* HEART OVERLAY */
+.io {
+  position: relative;
+  z-index: 10;
+}
+
+.io::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background-image: url("../../assets/heart.png");
+  background-size: cover;
+  background-position: center center;
+  opacity: 20%;
+}
+
+/* PLACE IMAGE */
+.place_img {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #000;
+  height: 90vh;
+  object-position: center 40%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* TEXT CONTENT */
+.saha {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hotel_name {
+  font-size: 50px;
+  font-family: "ms";
+  margin-bottom: 20px;
+}
+
+.address {
+  font-family: "arial";
+  font-size: 17px;
+  margin-bottom: 15px;
+}
+
+.detail_para {
+  font-family: "arial";
+  font-size: 18px;
+  line-height: 150%;
+  text-align: left;
+  font-weight: 400;
+}
+
+/* LINK BUTTON */
+.link {
+  margin-top: 30px;
+  width: fit-content;
+  padding: 15px 50px;
+  border: 1px solid #000;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-family: "arial";
+  font-size: 18px;
+  text-decoration: underline;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  background-color: #000;
+  color: #ffd6d6;
+  border-color: #ffd6d6;
+}
+
+/* -------------------------------------- */
+/* MEDIA QUERIES - TABLET AND MOBILE */
+/* -------------------------------------- */
+
+/* Tablets - max-width 1024px */
+@media screen and (max-width: 1024px) {
+  .detail_grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .hotel_name {
+    font-size: 40px;
+  }
+
+  .address {
+    font-size: 16px;
+  }
+
+  .detail_para {
+    font-size: 16px;
+  }
+
+  .place_img {
+    height: 70vh;
+  }
+
+  .link {
+    font-size: 16px;
+    padding: 12px 40px;
+  }
+}
+
+/* Mobile Devices - max-width 768px */
+@media screen and (max-width: 768px) {
+  .detail_grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hotel_name {
+    font-size: 35px;
+  }
+
+  .address {
+    font-size: 15px;
+  }
+
+  .detail_para {
+    font-size: 15px;
+  }
+
+  .place_img {
+    height: 60vh;
+  }
+
+  .link {
+    font-size: 15px;
+    padding: 10px 30px;
+  }
+}
+
+/* Small Mobile Devices - max-width 480px */
+@media screen and (max-width: 480px) {
+  .hotel_name {
+    font-size: 28px;
+  }
+
+  .address {
+    font-size: 14px;
+  }
+
+  .detail_para {
+    font-size: 14px;
+  }
+
+  .place_img {
+    height: 50vh;
+  }
+
+  .link {
+    font-size: 14px;
+    padding: 8px 25px;
+  }
+}

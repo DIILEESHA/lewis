@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+@font-face {
+  font-family: "sun";
+  src: url("../public/fonts/SunrollBold-Wy6YG.otf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "did";
+  src: url("../public/fonts/Didot\ Regular.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "did2";
+  src: url("../public/fonts/Didot\ Medium.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "arial";
+  src: url("../public/fonts/ArialCE.ttf") format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "bic";
+  src: url("../public/fonts/Bickham\ Script\ Pro\ Regular.ttf")
+    format("truetype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "ms";
+  src: url("../public/fonts/mussica-swash.otf ") format("truetype");
+  font-style: normal;
+}
+.too {
+  background-color: #000;
+  font-family: "arial";
+  font-size: 14px;
+  padding: 15px;
+  color: #fff;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.w {
+  background-image: url("./assets/back.webp");
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center center;
+}
+
+.wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+
+  /* From https://css.glass */
+  /* width: fit-content; */
+  margin: 0 auto;
+  min-height: 100vh;
+  /* height: fit-content; */
+}
+
+.for {
+  color: #fff;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: rgba(20, 20, 20, 0.637);
+  /* border-radius: 16px; */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.for h2 {
+  font-family: "arial";
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.for input {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #fff;
+  outline: none;
+  color: #fff;
+  font-family: "arial";
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-left-color: transparent;
+}
+
+.for input::placeholder {
+  color: #ffffff71;
+  padding: 0px;
+}
+
+.for button {
+  margin-top: 10px;
+  border: none;
+  color: #fff;
+  font-family: "arial";
+  font-weight: bold;
+
+  background-color: #1a1a1a;
+}

@@ -1,0 +1,188 @@
+.dress {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: #000000da;
+}
+
+.dress::after {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("../../assets/heart.png");
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  opacity: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+}
+
+.dress_content {
+  position: relative;
+  z-index: 1;
+  padding: 150px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.drss_topic {
+  padding-top: 70px;
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-family: "sun";
+}
+
+.dress_para {
+  width: 60%;
+  font-size: 18px;
+  margin: 10px auto;
+  line-height: 150%;
+  font-family: "arial";
+}
+
+.dress_grid {
+  display: grid;
+  margin: 50px auto;
+  gap: 10px;
+  max-width: 1000px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 10px;
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dress_sub {
+  position: relative;
+  overflow: hidden;
+}
+
+.dress_img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.dress_sub:hover .dress_img {
+  transform: scale(1.05);
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dress_sub:hover .overlay {
+  opacity: 1;
+}
+/* Base styles (desktop) already provided above */
+
+/* Medium devices (tablets, 768px to 1024px) */
+@media (max-width: 1024px) {
+  .dress_content {
+    padding: 100px 20px;
+  }
+
+  .drss_topic {
+    font-size: 36px;
+    padding-top: 50px;
+  }
+
+  .dress_para {
+    width: 80%;
+    font-size: 16px;
+  }
+
+  .dress_grid {
+    max-width: 90%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .dress_img {
+    height: 50vh;
+  }
+}
+
+/* Small devices (mobiles, 480px to 767px) */
+@media (max-width: 767px) {
+  .dress_content {
+    padding: 80px 15px;
+  }
+
+  .drss_topic {
+    font-size: 28px;
+    padding-top: 40px;
+  }
+
+  .dress_para {
+    width: 90%;
+    font-size: 15px;
+  }
+
+  .dress_grid {
+    grid-template-columns: 1fr 1fr; /* Single column on mobile */
+    max-width: 95%;
+  }
+
+  .dress_img {
+    height: 40vh;
+  }
+}
+
+/* Extra small devices (mobiles < 480px) */
+@media (max-width: 480px) {
+  .dress_content {
+    padding: 60px 10px;
+  }
+
+  .drss_topic {
+    font-size: 24px;
+    padding-top: 120px;
+  }
+
+  .dress_para {
+    width: 95%;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .dress_grid {
+    padding: 5px;
+    gap: 8px;
+  }
+
+  .dress_img {
+    height: 35vh;
+  }
+
+  .overlay {
+    font-size: 14px;
+  }
+}
+
+/* Optional: touch-friendly hover effect fallback */
+@media (hover: none) and (pointer: coarse) {
+  .dress_sub:hover .dress_img {
+    transform: none;
+  }
+
+  .dress_sub:hover .overlay {
+    opacity: 0.8;
+  }
+}

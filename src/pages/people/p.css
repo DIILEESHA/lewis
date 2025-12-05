@@ -1,0 +1,111 @@
+.bride_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 600px;
+  gap: 50px;
+  padding-bottom: 100px;
+  position: relative;
+  z-index: 10;
+  margin: 0px auto;
+  place-items: center;
+}
+
+.bride_sub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.bride_img {
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  padding: 4px;
+  border: 2px solid #fff;
+  object-position: center 0%;
+}
+
+.bride_name {
+  font-family: "sun";
+  color: #fff;
+  font-size: 20px;
+}
+
+.bride_title {
+  font-family: "arial";
+  color: #fff;
+  font-size: 15px;
+}
+/* Base styles (desktop) already provided above */
+
+/* Medium devices (tablets, 768px to 1024px) */
+@media (max-width: 1024px) {
+  .bride_grid {
+    grid-template-columns: 1fr 1fr; /* keep 2 columns but reduce gap */
+    max-width: 500px;
+    gap: 30px;
+    padding-bottom: 80px;
+  }
+
+  .bride_img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .bride_name {
+    font-size: 18px;
+  }
+
+  .bride_title {
+    font-size: 14px;
+  }
+}
+
+/* Small devices (mobiles, 480px to 767px) */
+@media (max-width: 767px) {
+  .bride_grid {
+    grid-template-columns: 1fr; /* single column */
+    max-width: 90%;
+    gap: 25px;
+    padding-bottom: 60px;
+  }
+
+  .bride_img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .bride_name {
+    font-size: 16px;
+  }
+
+  .bride_title {
+    font-size: 13px;
+  }
+}
+
+/* Extra small devices (mobiles < 480px) */
+@media (max-width: 480px) {
+  .bride_grid {
+    grid-template-columns: 1fr 1fr; /* single column */
+    max-width: 95%;
+    gap: 20px;
+    padding-bottom: 50px;
+  }
+
+  .bride_img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .bride_name {
+    font-size: 14px;
+  }
+
+  .bride_title {
+    font-size: 12px;
+  }
+}

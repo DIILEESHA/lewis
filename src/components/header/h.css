@@ -1,0 +1,166 @@
+/* HEADER CONTAINER */
+.header_container {
+  background-image: url("../../assets/header2.jpeg");
+  position: relative;
+  width: 100%;
+  height: 130vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 32%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* DARK OVERLAY */
+.header_container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.418);
+  pointer-events: none; /* allow clicks to pass through */
+  z-index: 10; /* below nav_section */
+}
+
+/* COUPLE NAME */
+.couple_name {
+  color: #fcf9f6;
+  position: absolute;
+  inset: 0;
+  z-index: 30; /* above overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "bic", sans-serif;
+  font-size: 150px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none; /* optional: avoid accidental selection */
+}
+.go {
+  width: 100%;
+  position: absolute;
+}
+/* NAV SECTION */
+.nav_section {
+  position: relative;
+  z-index: 20; /* above overlay */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+/* LOGO */
+.nav_logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav_logo_img {
+  width: 80px;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+/* NAV LINKS WRAPPER */
+.no {
+  position: relative;
+  z-index: 20; /* ensure above overlay */
+}
+
+/* NAV UL */
+.nav_ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/* NAV LI */
+.nav_li {
+  font-family: "sun", sans-serif;
+  color: #fcf9f6;
+  list-style: none;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 350%;
+  position: relative;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav_li:hover {
+  color: #ffd6d6; /* soft romantic hover */
+  transform: translateY(-3px); /* subtle lift */
+}
+
+/* OPTIONAL LINE UNDER NAV ITEM ON HOVER */
+.nav_li::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffd6d6;
+  transition: width 0.3s ease;
+}
+
+.nav_li:hover::after {
+  width: 100%;
+}
+
+/* MOBILE NAV ICON */
+.mobile_nav_icon {
+  display: none;
+  cursor: pointer;
+}
+
+/* MOBILE NAV OVERLAY */
+.mobile_nav_menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  z-index: 99999;
+}
+
+.mobile_nav_item {
+  font-family: "sun", sans-serif;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+@media screen and (max-width: 1200px) {
+  .couple_name { font-size: 100px; }
+  .nav_ul { gap: 20px; }
+}
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+  .header_container { height: 60vh; }
+  .couple_name { font-size: 100px; }
+  .nav_ul { display: none; }
+  .mobile_nav_icon { display: block; }
+  .nav_section { padding: 15px 25px; }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+  .couple_name { font-size: 80px; }
+  .mobile_nav_item { font-size: 20px; }
+  .mobile_nav_menu { gap: 20px; }
+}

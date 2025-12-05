@@ -1,0 +1,168 @@
+.guide_content {
+  padding: 0px 0 70px 0;
+  max-width: 900px;
+  margin: 0px auto;
+  margin-top: -70px;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+.park_img {
+  object-fit: cover;
+  object-position: center center;
+  width: 550px;
+  height: 70vh;
+  padding: 5px;
+  border: 1px solid #fff;
+  margin-bottom: 20px;
+}
+.park_title {
+  font-family: "sun";
+  font-size: 25px;
+}
+
+.df {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pp {
+  font-family: "arial";
+  font-size: 17px;
+  width: 70%;
+  text-align: center;
+  margin: 20px 0;
+  line-height: 150%;
+}
+.location_btn {
+  padding: 15px 40px;
+  border: 1px solid #333;
+  font-family: "arial";
+  font-size: 17px;
+  background-color: #1a1a1a;
+  color: #fff;
+  cursor: pointer;
+  /* font-weight: bold; */
+}
+.pps {
+  font-family: "sun";
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+li{
+  list-style: none;
+}
+
+/* Medium devices (tablets, 768px to 1024px) */
+@media (max-width: 1024px) {
+  .guide_content {
+    max-width: 80%;
+    margin-top: -50px;
+    padding-bottom: 50px;
+  }
+
+  .park_img {
+    width: 450px;
+    height: 55vh;
+  }
+
+  .park_title {
+    font-size: 22px;
+  }
+
+  .pp {
+    width: 80%;
+    font-size: 16px;
+  }
+
+  .location_btn {
+    padding: 12px 35px;
+    font-size: 16px;
+  }
+
+  .pps {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+}
+
+/* Small devices (mobiles, 480px to 767px) */
+@media (max-width: 767px) {
+  .guide_content {
+    max-width: 90%;
+    margin-top: -30px;
+    padding-bottom: 40px;
+  }
+
+  .park_img {
+    width: 100%;
+    height: 45vh;
+  }
+
+  .park_title {
+    font-size: 20px;
+  }
+
+  .pp {
+    width: 90%;
+    font-size: 15px;
+  }
+
+  .location_btn {
+    padding: 10px 30px;
+    font-size: 15px;
+  }
+
+  .pps {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Extra small devices (mobiles < 480px) */
+@media (max-width: 480px) {
+  .guide_content {
+    max-width: 95%;
+    margin-top: -20px;
+    padding-bottom: 30px;
+  }
+
+  .park_img {
+    width: 100%;
+    height: 35vh;
+  }
+
+  .park_title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .pp {
+    width: 95%;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .location_btn {
+    padding: 8px 25px;
+    font-size: 14px;
+  }
+
+  .pps {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+/* Optional: touch-friendly hover fallback */
+@media (hover: none) and (pointer: coarse) {
+  .df:hover .park_img {
+    transform: none;
+  }
+}

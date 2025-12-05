@@ -1,0 +1,121 @@
+.form_input_section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.error_span {
+  color: #ff4d4f;
+  font-size: 13px;
+  margin-top: 3px;
+  display: block;
+  text-align: left;
+  margin-top: 0px;
+  font-family: "arial";
+}
+
+.rsvp_form {
+  max-width: 600px;
+  margin: 50px auto;
+  background: rgba(22, 22, 22, 0.404);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.062);
+  padding: 20px;
+  border-radius: 20px;
+  padding: 40px;
+}
+.form_input {
+  border: 1px solid rgba(255, 255, 255, 0.062);
+  background-color: transparent;
+  outline: none;
+  color: #fff;
+  font-family: "arial";
+  font-size: 14px;
+  font-weight: 400;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.form_input::placeholder {
+  font-family: "arial";
+  font-size: 14px;
+}
+.form_label {
+  font-family: "arial";
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.radio_section {
+  display: flex;
+  gap: 5px;
+  /* flex-direction: column; */
+  margin-bottom: 10px;
+}
+
+.radio_text {
+  font-family: "arial";
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.form_submit_btn {
+  background-color: #fff;
+  width: 100%;
+  padding: 15px;
+  font-family: "arial";
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: #1a1a1a;
+}
+@media (max-width: 768px) {
+  .rsvp_form {
+    padding: 30px;
+    margin: 30px 20px;
+  }
+
+  .form_label {
+    font-size: 16px;
+  }
+
+  .form_input {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .form_submit_btn {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .rsvp_form {
+    padding: 20px;
+    margin: 20px 10px;
+    border-radius: 15px;
+  }
+
+  .form_label {
+    font-size: 14px;
+  }
+
+  .form_input {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .form_submit_btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .radio_text {
+    font-size: 12px;
+  }
+}

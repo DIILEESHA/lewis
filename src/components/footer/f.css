@@ -1,0 +1,149 @@
+/* FOOTER CONTAINER */
+.footer_container {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+}
+.rsvp_here {
+  text-transform: uppercase;
+}
+/* NOTE SECTION */
+.note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* BUTTON OR INTERACTIVE ELEMENT */
+.dopa {
+  color: #fff;
+  border: 2px solid #fff;
+  cursor: pointer;
+  margin: 40px 0;
+  padding: 12px 40px;
+  font-family: "arial";
+  font-size: 18px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.dopa:hover {
+  background-color: #fff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* COUPLE NAME OR HIGHLIGHT */
+.couple {
+  font-family: "sun";
+  font-size: 30px;
+  line-height: 100%;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+/* SECTION TITLES */
+.respond_title {
+  font-family: "sun";
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+/* PARAGRAPH TEXT */
+.respond_p {
+  font-family: "arial";
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* -------------------------------------- */
+/* MEDIA QUERIES - TABLET AND MOBILE */
+/* -------------------------------------- */
+
+/* Tablets - max-width 1024px */
+@media screen and (max-width: 1024px) {
+  .footer_container {
+    padding: 60px 40px;
+  }
+
+  .respond_title {
+    font-size: 40px;
+    margin-bottom: 25px;
+  }
+
+  .respond_p {
+    font-size: 16px;
+  }
+
+  .dopa {
+    font-size: 16px;
+    padding: 10px 35px;
+  }
+
+  .couple {
+    font-size: 26px;
+  }
+}
+
+/* Mobile Devices - max-width 768px */
+@media screen and (max-width: 768px) {
+  .footer_container {
+    padding: 50px 30px;
+  }
+
+  .respond_title {
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+
+  .respond_p {
+    font-size: 15px;
+  }
+
+  .dopa {
+    font-size: 15px;
+    padding: 8px 30px;
+  }
+
+  .couple {
+    font-size: 24px;
+  }
+
+  .note {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Small Mobile Devices - max-width 480px */
+@media screen and (max-width: 480px) {
+  .footer_container {
+    padding: 40px 20px;
+  }
+
+  .respond_title {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .respond_p {
+    font-size: 14px;
+  }
+
+  .dopa {
+    font-size: 14px;
+    padding: 6px 25px;
+  }
+
+  .couple {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,135 @@
+.timelne_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 50px;
+  position: relative;
+}
+
+.lo {
+  padding: 50px 0;
+}
+
+.timelne_grid::after {
+  position: absolute;
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  background-color: #000;
+  height: 100%;
+  width: 1px;
+  margin: 0 auto;
+}
+.timeline {
+  max-width: 1220px;
+
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+.tot {
+  background-color: #fcf9f6;
+  overflow: hidden;
+}
+.timeline_icon {
+  width: 60px;
+}
+
+.timeline_sub {
+  /* text-align: center; */
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  /* justify-content: center; */
+  gap: 30px;
+}
+
+.timeline_title {
+  font-family: "sun";
+  font-size: 60px;
+  margin-bottom: 100px;
+  /* font-weight: 500; */
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.gang {
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.timeline_date {
+  font-family: "sun";
+  font-weight: 400;
+  /* width: 50%; */
+  font-size: 24px;
+}
+.name {
+  font-family: "sun";
+  font-weight: 400;
+  line-height: 180%;
+  font-size: 20px;
+}
+
+.addtonal {
+  font-weight: 400;
+  /* margin: 0 5px; */
+  font-family: "arial";
+  font-size: 20px;
+}
+@media screen and (max-width: 680px) {
+  .timeline_icon {
+    width: 60px;
+  }
+  .ho {
+    display: none;
+  }
+
+  .timelne_grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .timeline_sub {
+    margin: 0 0px 0 40px;
+  }
+  .gang {
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .timeline_date {
+    font-size: 17px;
+  }
+  .name {
+    font-size: 14px;
+  }
+  .addtonal {
+    width: 90%;
+    font-size: 18px;
+  }
+  .timelne_grid::after {
+    position: absolute;
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 20;
+    background-color: #000;
+    height: 100%;
+    width: 1px;
+    margin-left: 20px;
+  }
+
+  .timeline_title {
+    font-size: 28px;
+    font-family: "sun";
+    margin-bottom: 60px;
+  }
+}
